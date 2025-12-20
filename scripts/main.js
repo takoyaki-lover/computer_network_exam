@@ -1,3 +1,8 @@
+// 第何回目表示
+document.getElementById("title").textContent += ` 第${url_tail[num - 1]}回`
+document.getElementById("header-title").textContent += ` 第${url_tail[num - 1]}回`
+
+
 function renderQuiz() {
     const container = document.getElementById('quiz-container');
 
@@ -5,7 +10,8 @@ function renderQuiz() {
         const sectionDiv = document.createElement('div');
         sectionDiv.className = 'section-block';
 
-        let html = `<h2>${section.title}</h2>`;
+        let html = `<h2 class="level-2">${section.title}</h2>`;
+
         if (section.imageUrl) {
             html += `<img src="./figure_table/${section.imageUrl}" class="quiz-image">`
         }
@@ -13,7 +19,7 @@ function renderQuiz() {
         section.questions.forEach((q, qIdx) => {
             let qImgHtml = q.imageUrl ? `<img src="./figure_table/${q.imageUrl}" class="quiz-image">` : "";
             if (q.title) {
-                html += `<h2 class="q-title">${q.title}</h2>`
+                html += `<h2 class="q-title level-3">${q.title}</h2>`
             }
             let parts = q.sampleAnswer.split('\n');
             let questionHtml = "";
@@ -25,13 +31,13 @@ function renderQuiz() {
             }
             html += `
                 <div class="q-item">
-                    <span class="q-text">${qIdx + 1}. ${q.text}</span>
+                    <p class="q-text level-4">${qIdx + 1}. ${q.text}</p>
                     ${qImgHtml}
-                    <textarea id="user-input-${sIdx}-${qIdx}" placeholder="ここに解答を入力"></textarea>
+                    <textarea id="user-input-${sIdx}-${qIdx}" class="level-4" placeholder="ここに解答を入力"></textarea>
                     <button class="btn-ans" onclick="toggleAnswer(${sIdx}, ${qIdx})">解答例を表示 / 非表示</button>
                     <div id="answer-${sIdx}-${qIdx}" class="sample-answer-area">
-                        <span class="ans-label">【解答例】</span>
-                        　${questionHtml}
+                        <p class="ans-label level-4">【解答例】</p>
+                        <p class="sample-answer level-4">　${questionHtml}</p>
                     </div>
                 </div>`;
         });
