@@ -39,20 +39,20 @@
 const quizData = [
     {
         title: "第8回：データリンク層の概要 (1)",
-        imageUrl: "t1.png",
+        imageUrl: "t2.png",
         questions: [
             {
                 title: "端末Aから2つのルータX, Yをこの順に経由し，端末Bにフレームを送信した場合，以下のそれぞれで送信されるフレームの宛先IPアドレスと宛先MACアドレスを答えよ．ただし，それぞれのIPアドレスとMACアドレスは以下の表1の通りとする．",
                 text: "AからXの間",
-                sampleAnswer: "宛先IPアドレス　10.0.1.10，　宛先MACアドレス　00-00-85-d8-87-3a",
+                sampleAnswer: "宛先IPアドレス　　10.0.1.10，\n宛先MACアドレス　00-00-85-d8-87-3a",
             },
             {
                 text: "XからYの間",
-                sampleAnswer: "宛先IPアドレス　10.0.1.10，　宛先MACアドレス　00-00-4c-e3-55-2b",
+                sampleAnswer: "宛先IPアドレス　　10.0.1.10，\n宛先MACアドレス　00-00-4c-e3-55-2b",
             },
             {
                 text: "Y から B の間",
-                sampleAnswer: "宛先IPアドレス　10.0.1.10，　宛先MACアドレス　d4-9a-20-2e-55-b3",
+                sampleAnswer: "宛先IPアドレス　　10.0.1.10，\n宛先MACアドレス　d4-9a-20-2e-55-b3",
             },
             {
                 text: "無線LANではなぜ，CSMA/CDを使用せずにCSMA/CAを用いるのか．理由を記せ．",
@@ -91,7 +91,8 @@ const quizData = [
             },
             {
                 text: "ベースバンド伝送方式のNRZ，RZ，バイポーラ，マンチェスターの各符号を用いて，ビット列00101101の信号波形を教科書124ページの図4-21に倣って図示せよ．ただし，NRZとRZは負極側に振れる単流とする．",
-                sampleAnswer: "<img src='./figure_table/f2.png' class='quiz-image'>",
+                ansImg: "f2.png",
+                sampleAnswer: "解答は図の通りとなる。",
             }
         ]
     },
